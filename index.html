@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>GlobalLink SaaS</title>
 
@@ -17,6 +17,10 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Inter',sans-serif;
 background:#f4f7fc;
@@ -24,24 +28,25 @@ color:#0f172a;
 overflow-x:hidden;
 }
 
-html{
-scroll-behavior:smooth;
-}
+/* =========================
+NAVBAR
+========================= */
 
 .navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:22px 60px;
-background:rgba(255,255,255,.75);
+background:rgba(255,255,255,.78);
 backdrop-filter:blur(18px);
 position:sticky;
 top:0;
 z-index:999;
+border-bottom:1px solid rgba(255,255,255,.3);
 }
 
 .logo{
-font-size:32px;
+font-size:34px;
 font-weight:900;
 background:linear-gradient(90deg,#2563eb,#7c3aed);
 -webkit-background-clip:text;
@@ -50,13 +55,19 @@ background:linear-gradient(90deg,#2563eb,#7c3aed);
 
 .nav-links{
 display:flex;
-gap:32px;
+gap:36px;
 }
 
 .nav-links a{
 text-decoration:none;
-font-weight:700;
+font-weight:800;
+font-size:16px;
 color:#0f172a;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#2563eb;
 }
 
 .lang-select{
@@ -65,11 +76,18 @@ border:none;
 border-radius:14px;
 background:white;
 font-weight:700;
+font-size:15px;
 cursor:pointer;
+outline:none;
+box-shadow:0 8px 20px rgba(0,0,0,.06);
 }
 
+/* =========================
+HERO
+========================= */
+
 .hero{
-padding:120px 20px;
+padding:130px 20px 110px;
 text-align:center;
 background:
 radial-gradient(circle at top left,#dbeafe 0%,transparent 35%),
@@ -84,17 +102,25 @@ border-radius:999px;
 background:white;
 font-weight:800;
 color:#4f46e5;
-margin-bottom:30px;
+margin-bottom:34px;
+box-shadow:0 10px 30px rgba(99,102,241,.12);
 }
 
 .hero h1{
-font-size:82px;
+font-size:90px;
 font-weight:900;
+line-height:1.05;
 margin-bottom:24px;
 }
 
+.hero h1 span{
+background:linear-gradient(90deg,#2563eb,#9333ea);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
 .hero p{
-max-width:900px;
+max-width:920px;
 margin:auto;
 font-size:22px;
 line-height:1.8;
@@ -102,10 +128,10 @@ color:#64748b;
 }
 
 .hero-buttons{
-margin-top:50px;
 display:flex;
 justify-content:center;
-gap:20px;
+gap:18px;
+margin-top:50px;
 flex-wrap:wrap;
 }
 
@@ -114,18 +140,28 @@ padding:18px 34px;
 border-radius:18px;
 text-decoration:none;
 font-weight:800;
+font-size:18px;
 transition:.3s;
 }
 
 .primary-btn{
 background:linear-gradient(90deg,#2563eb,#7c3aed);
 color:white;
+box-shadow:0 16px 40px rgba(37,99,235,.2);
 }
 
 .secondary-btn{
 background:white;
 color:#0f172a;
 }
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* =========================
+SECTION
+========================= */
 
 .section{
 max-width:1200px;
@@ -139,14 +175,19 @@ margin-bottom:60px;
 }
 
 .section-title h2{
-font-size:58px;
-margin-bottom:14px;
+font-size:60px;
+font-weight:900;
+margin-bottom:16px;
 }
 
 .section-title p{
 font-size:20px;
 color:#64748b;
 }
+
+/* =========================
+FEATURES
+========================= */
 
 .cards{
 display:grid;
@@ -156,20 +197,30 @@ gap:28px;
 
 .card{
 background:white;
-padding:34px;
+padding:36px;
 border-radius:28px;
 box-shadow:0 12px 35px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 18px 40px rgba(37,99,235,.12);
 }
 
 .card h3{
-margin-bottom:14px;
 font-size:24px;
+margin-bottom:14px;
 }
 
 .card p{
 line-height:1.8;
 color:#64748b;
 }
+
+/* =========================
+PRICING
+========================= */
 
 .pricing{
 display:grid;
@@ -179,19 +230,94 @@ gap:30px;
 
 .price-box{
 background:white;
-padding:40px;
+padding:42px 34px;
 border-radius:30px;
 text-align:center;
 box-shadow:0 12px 35px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.price-box:hover{
+transform:translateY(-8px);
+box-shadow:0 18px 45px rgba(37,99,235,.14);
+}
+
+.price-box h3{
+font-size:28px;
+margin-bottom:20px;
 }
 
 .price{
-font-size:54px;
+font-size:58px;
 font-weight:900;
-margin:20px 0;
+margin-bottom:22px;
 background:linear-gradient(90deg,#2563eb,#9333ea);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
+}
+
+.price-box ul{
+list-style:none;
+margin-bottom:30px;
+}
+
+.price-box li{
+margin:12px 0;
+color:#64748b;
+}
+
+/* =========================
+PAYMENT
+========================= */
+
+.pay-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:22px;
+margin-top:40px;
+}
+
+.pay-item{
+background:white;
+padding:26px 20px;
+border-radius:22px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+font-weight:800;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+transition:.3s;
+}
+
+.pay-item:hover{
+transform:translateY(-5px);
+}
+
+.pay-item img{
+width:36px;
+height:36px;
+object-fit:contain;
+}
+
+.notice{
+margin-top:30px;
+text-align:center;
+font-size:14px;
+line-height:1.8;
+color:#64748b;
+}
+
+/* =========================
+SOCIAL
+========================= */
+
+.social-box{
+background:rgba(255,255,255,.75);
+padding:28px;
+border-radius:34px;
+backdrop-filter:blur(18px);
+box-shadow:0 10px 40px rgba(0,0,0,.06);
 }
 
 .social-row{
@@ -204,19 +330,46 @@ justify-content:center;
 .social-btn{
 display:flex;
 align-items:center;
+justify-content:center;
 gap:12px;
-padding:14px 20px;
-background:white;
+padding:16px 24px;
 border-radius:20px;
+background:white;
 text-decoration:none;
-font-weight:800;
-color:#0f172a;
+transition:.3s;
+min-width:180px;
+}
+
+.social-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 30px rgba(37,99,235,.12);
 }
 
 .social-btn img{
-width:38px;
-height:38px;
+width:40px;
+height:40px;
+object-fit:contain;
 }
+
+.social-btn span{
+font-weight:800;
+font-size:18px;
+color:#0f172a;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+padding:50px 20px;
+text-align:center;
+color:#64748b;
+}
+
+/* =========================
+TELEGRAM FLOAT
+========================= */
 
 .telegram-service{
 position:fixed;
@@ -230,8 +383,9 @@ display:flex;
 align-items:center;
 gap:12px;
 padding:14px 20px;
-background:#0f172a;
 border-radius:18px;
+background:#0f172a;
+box-shadow:0 12px 40px rgba(0,0,0,.3);
 cursor:pointer;
 }
 
@@ -256,12 +410,14 @@ border-radius:24px;
 box-shadow:0 20px 60px rgba(0,0,0,.35);
 opacity:0;
 visibility:hidden;
+transform:translateY(20px);
 transition:.3s;
 }
 
 .telegram-service:hover .telegram-qr{
 opacity:1;
 visibility:visible;
+transform:translateY(0);
 }
 
 .telegram-qr img{
@@ -273,13 +429,12 @@ border-radius:18px;
 margin-top:12px;
 text-align:center;
 font-weight:900;
+font-size:18px;
 }
 
-footer{
-padding:40px;
-text-align:center;
-color:#64748b;
-}
+/* =========================
+MOBILE
+========================= */
 
 @media(max-width:768px){
 
@@ -305,6 +460,10 @@ font-size:18px;
 font-size:42px;
 }
 
+.social-btn{
+width:100%;
+}
+
 .telegram-main span{
 display:none;
 }
@@ -320,6 +479,8 @@ width:180px;
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav class="navbar">
 
 <div class="logo">GlobalLink</div>
@@ -327,6 +488,7 @@ width:180px;
 <div class="nav-links">
 <a href="#features">Features</a>
 <a href="#pricing">Pricing</a>
+<a href="#payment">Payment</a>
 <a href="#contact">Contact</a>
 </div>
 
@@ -342,6 +504,8 @@ width:180px;
 
 </nav>
 
+<!-- HERO -->
+
 <section class="hero">
 
 <div class="hero-tag" data-key="tag">
@@ -349,7 +513,7 @@ GLOBAL NETWORK SERVICE
 </div>
 
 <h1 data-key="heroTitle">
-Connect Worldwide
+Connect <span>Worldwide</span>
 </h1>
 
 <p data-key="heroDesc">
@@ -369,6 +533,8 @@ Contact Us
 </div>
 
 </section>
+
+<!-- FEATURES -->
 
 <section class="section" id="features">
 
@@ -391,7 +557,7 @@ Contact Us
 
 <div class="card">
 <h3 data-key="f3">Multi Platform</h3>
-<p data-key="f3d">Windows macOS iOS Android.</p>
+<p data-key="f3d">Supports all devices.</p>
 </div>
 
 <div class="card">
@@ -402,6 +568,8 @@ Contact Us
 </div>
 
 </section>
+
+<!-- PRICING -->
 
 <section class="section" id="pricing">
 
@@ -415,43 +583,161 @@ Contact Us
 <div class="price-box">
 <h3 data-key="monthly">Monthly</h3>
 <div class="price">$9.9</div>
+
+<ul>
+<li>1000GB Traffic</li>
+<li>Global Nodes</li>
+<li>5 Devices</li>
+<li>24/7 Support</li>
+</ul>
+
+<a href="#payment" class="btn primary-btn" data-key="buyNow">
+Buy Now
+</a>
+
 </div>
 
 <div class="price-box">
 <h3 data-key="quarterly">Quarterly</h3>
 <div class="price">$25.9</div>
+
+<ul>
+<li>Unlimited Speed</li>
+<li>Priority Routing</li>
+<li>10 Devices</li>
+<li>VIP Support</li>
+</ul>
+
+<a href="#payment" class="btn primary-btn" data-key="buyNow">
+Buy Now
+</a>
+
 </div>
 
 <div class="price-box">
 <h3 data-key="annual">Annual</h3>
 <div class="price">$89.9</div>
+
+<ul>
+<li>Premium Lines</li>
+<li>Unlimited Devices</li>
+<li>Enterprise Support</li>
+<li>Best Value</li>
+</ul>
+
+<a href="#payment" class="btn primary-btn" data-key="buyNow">
+Buy Now
+</a>
+
 </div>
 
 </div>
 
 </section>
 
+<!-- PAYMENT -->
+
+<section class="section" id="payment">
+
+<div class="section-title">
+<h2 data-key="paymentTitle">Payment Methods</h2>
+<p data-key="paymentDesc">Supports global payments</p>
+</div>
+
+<div class="pay-list">
+
+<div class="pay-item">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968382.png">
+<span>Stripe</span>
+</div>
+
+<div class="pay-item">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174861.png">
+<span>PayPal</span>
+</div>
+
+<div class="pay-item">
+<img src="https://cdn-icons-png.flaticon.com/512/196/196578.png">
+<span>Visa</span>
+</div>
+
+<div class="pay-item">
+<img src="https://cdn-icons-png.flaticon.com/512/196/196561.png">
+<span>MasterCard</span>
+</div>
+
+<div class="pay-item">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968299.png">
+<span>Apple Pay</span>
+</div>
+
+<div class="pay-item">
+<img src="https://cryptologos.cc/logos/tether-usdt-logo.png">
+<span>USDT</span>
+</div>
+
+</div>
+
+<div class="notice" data-key="notice">
+This website provides international network acceleration solutions for legal and compliant usage only.
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
 <section class="section" id="contact">
 
 <div class="section-title">
-<h2 data-key="contactTitle">Contact Us</h2>
-<p data-key="contactDesc">Reach us globally</p>
+<h2 data-key="contactTitle">Connect With Us</h2>
+<p data-key="contactDesc">Reach us through international platforms</p>
 </div>
+
+<div class="social-box">
 
 <div class="social-row">
 
-<a href="https://t.me/yourtelegram" class="social-btn">
+<a href="https://t.me/yourtelegram" class="social-btn" target="_blank">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
 <span>Telegram</span>
 </a>
+
+<a href="https://instagram.com" class="social-btn" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+<span>Instagram</span>
+</a>
+
+<a href="https://x.com" class="social-btn" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png">
+<span>X</span>
+</a>
+
+<a href="https://discord.com" class="social-btn" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png">
+<span>Discord</span>
+</a>
+
+<a href="mailto:support@example.com" class="social-btn">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+<span>Email</span>
+</a>
+
+<a href="https://youtube.com" class="social-btn" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png">
+<span>YouTube</span>
+</a>
+
+</div>
 
 </div>
 
 </section>
 
 <footer>
-© 2026 GlobalLink SaaS
+© 2026 GlobalLink SaaS. All Rights Reserved.
 </footer>
+
+<!-- TELEGRAM FLOAT -->
 
 <div class="telegram-service">
 
@@ -462,6 +748,8 @@ Contact Us
 
 <div class="telegram-qr">
 
+<!-- 替换二维码 -->
+
 <img src="assets/images/telegram-qr.png">
 
 <p>@KKSHAN</p>
@@ -470,13 +758,45 @@ Contact Us
 
 </div>
 
+<!-- MULTI LANGUAGE -->
+
 <script>
 
 const translations = {
 
+zh:{
+tag:'全球网络服务',
+heroTitle:'连接 <span>全球</span>',
+heroDesc:'企业级全球网络加速解决方案。',
+getStarted:'立即开始',
+contactUs:'联系我们',
+featureTitle:'服务特点',
+featureDesc:'稳定灵活的企业级方案',
+f1:'全球节点',
+f1d:'覆盖全球多个地区。',
+f2:'高速稳定',
+f2d:'优化线路低延迟。',
+f3:'多平台支持',
+f3d:'支持所有主流设备。',
+f4:'24小时支持',
+f4d:'全天候技术支持。',
+pricingTitle:'套餐价格',
+pricingDesc:'适用于全球用户的灵活方案',
+monthly:'月付方案',
+quarterly:'季度方案',
+annual:'年度方案',
+buyNow:'立即购买',
+paymentTitle:'支付方式',
+paymentDesc:'支持全球支付',
+notice:'本网站仅提供合法合规国际网络加速解决方案。',
+contactTitle:'联系我们',
+contactDesc:'通过全球社交平台联系我们',
+telegram:'官方客服'
+},
+
 en:{
 tag:'GLOBAL NETWORK SERVICE',
-heroTitle:'Connect Worldwide',
+heroTitle:'Connect <span>Worldwide</span>',
 heroDesc:'Enterprise-grade global acceleration solutions.',
 getStarted:'Get Started',
 contactUs:'Contact Us',
@@ -487,7 +807,7 @@ f1d:'Worldwide coverage.',
 f2:'High Speed',
 f2d:'Low latency optimized routing.',
 f3:'Multi Platform',
-f3d:'Windows macOS iOS Android.',
+f3d:'Supports all devices.',
 f4:'24/7 Support',
 f4d:'Professional enterprise support.',
 pricingTitle:'Pricing Plans',
@@ -495,102 +815,88 @@ pricingDesc:'Flexible plans',
 monthly:'Monthly',
 quarterly:'Quarterly',
 annual:'Annual',
-contactTitle:'Contact Us',
-contactDesc:'Reach us globally',
+buyNow:'Buy Now',
+paymentTitle:'Payment Methods',
+paymentDesc:'Supports global payments',
+notice:'This website provides international acceleration solutions for legal usage only.',
+contactTitle:'Connect With Us',
+contactDesc:'Reach us through international platforms',
 telegram:'Official Support'
-},
-
-zh:{
-tag:'全球网络服务',
-heroTitle:'连接全球',
-heroDesc:'企业级全球网络加速解决方案。',
-getStarted:'立即开始',
-contactUs:'联系我们',
-featureTitle:'服务特点',
-featureDesc:'稳定灵活的企业方案',
-f1:'全球节点',
-f1d:'覆盖全球多个地区。',
-f2:'高速稳定',
-f2d:'优化线路低延迟。',
-f3:'多平台支持',
-f3d:'支持所有主流设备。',
-f4:'24小时支持',
-f4d:'全天候技术支持。',
-pricingTitle:'套餐价格',
-pricingDesc:'灵活套餐',
-monthly:'月付方案',
-quarterly:'季度方案',
-annual:'年度方案',
-contactTitle:'联系我们',
-contactDesc:'全球社交平台联系',
-telegram:'官方客服'
 },
 
 ja:{
 tag:'グローバルネットワークサービス',
-heroTitle:'世界へ接続',
-heroDesc:'企業向けグローバル高速化ソリューション。',
-getStarted:'開始',
+heroTitle:'世界へ <span>接続</span>',
+heroDesc:'エンタープライズ向けグローバル加速ソリューション。',
+getStarted:'今すぐ開始',
 contactUs:'お問い合わせ',
 featureTitle:'特徴',
-featureDesc:'安定した企業ソリューション',
+featureDesc:'安定した企業向けソリューション',
 f1:'グローバルノード',
 f1d:'世界中をカバー。',
-f2:'高速通信',
-f2d:'低遅延接続。',
+f2:'高速接続',
+f2d:'低遅延ルーティング。',
 f3:'マルチプラットフォーム',
 f3d:'全デバイス対応。',
 f4:'24時間サポート',
-f4d:'専門サポート。',
+f4d:'専門サポート対応。',
 pricingTitle:'料金プラン',
 pricingDesc:'柔軟なプラン',
-monthly:'月額',
-quarterly:'四半期',
-annual:'年間',
+monthly:'月額プラン',
+quarterly:'四半期プラン',
+annual:'年間プラン',
+buyNow:'今すぐ購入',
+paymentTitle:'支払い方法',
+paymentDesc:'グローバル決済対応',
+notice:'合法的な用途のみ対応しています。',
 contactTitle:'お問い合わせ',
-contactDesc:'世界中で連絡可能',
+contactDesc:'各種SNSからご連絡ください',
 telegram:'公式サポート'
 },
 
 ko:{
 tag:'글로벌 네트워크 서비스',
-heroTitle:'전 세계 연결',
+heroTitle:'전세계 <span>연결</span>',
 heroDesc:'기업용 글로벌 가속 솔루션.',
 getStarted:'시작하기',
 contactUs:'문의하기',
-featureTitle:'서비스 특징',
-featureDesc:'안정적인 솔루션',
+featureTitle:'특징',
+featureDesc:'안정적인 기업 솔루션',
 f1:'글로벌 노드',
-f1d:'전 세계 지원.',
+f1d:'전세계 커버리지.',
 f2:'고속 연결',
-f2d:'낮은 지연 시간.',
+f2d:'낮은 지연시간.',
 f3:'멀티 플랫폼',
-f3d:'모든 장치 지원.',
+f3d:'모든 기기 지원.',
 f4:'24시간 지원',
 f4d:'전문 기술 지원.',
 pricingTitle:'요금제',
 pricingDesc:'유연한 플랜',
-monthly:'월간',
-quarterly:'분기',
-annual:'연간',
+monthly:'월간 플랜',
+quarterly:'분기 플랜',
+annual:'연간 플랜',
+buyNow:'구매하기',
+paymentTitle:'결제 방식',
+paymentDesc:'글로벌 결제 지원',
+notice:'합법적인 용도로만 사용 가능합니다.',
 contactTitle:'문의하기',
-contactDesc:'글로벌 연락',
-telegram:'공식 지원'
+contactDesc:'국제 플랫폼으로 연락하세요',
+telegram:'공식 고객센터'
 },
 
 fr:{
-tag:'SERVICE GLOBAL',
-heroTitle:'Connexion Mondiale',
-heroDesc:'Solutions réseau professionnelles.',
+tag:'SERVICE RÉSEAU MONDIAL',
+heroTitle:'Connexion <span>mondiale</span>',
+heroDesc:'Solutions mondiales professionnelles.',
 getStarted:'Commencer',
-contactUs:'Contact',
+contactUs:'Contactez-nous',
 featureTitle:'Fonctionnalités',
 featureDesc:'Solutions fiables',
-f1:'Nœuds Mondiaux',
+f1:'Nœuds mondiaux',
 f1d:'Couverture mondiale.',
-f2:'Haute Vitesse',
-f2d:'Faible latence.',
-f3:'Multi Plateforme',
+f2:'Haute vitesse',
+f2d:'Routage faible latence.',
+f3:'Multi plateforme',
 f3d:'Compatible tous appareils.',
 f4:'Support 24/7',
 f4d:'Support professionnel.',
@@ -599,23 +905,27 @@ pricingDesc:'Plans flexibles',
 monthly:'Mensuel',
 quarterly:'Trimestriel',
 annual:'Annuel',
-contactTitle:'Contact',
-contactDesc:'Connexion mondiale',
-telegram:'Support Officiel'
+buyNow:'Acheter',
+paymentTitle:'Méthodes de paiement',
+paymentDesc:'Paiements mondiaux',
+notice:'Utilisation légale uniquement.',
+contactTitle:'Contactez-nous',
+contactDesc:'Rejoignez-nous sur les plateformes sociales',
+telegram:'Support officiel'
 },
 
 de:{
-tag:'GLOBALER SERVICE',
-heroTitle:'Weltweit Verbinden',
-heroDesc:'Professionelle globale Lösungen.',
-getStarted:'Starten',
+tag:'GLOBALER NETZWERKSERVICE',
+heroTitle:'Weltweit <span>verbinden</span>',
+heroDesc:'Professionelle globale Beschleunigungslösungen.',
+getStarted:'Jetzt starten',
 contactUs:'Kontakt',
 featureTitle:'Funktionen',
 featureDesc:'Zuverlässige Lösungen',
 f1:'Globale Knoten',
 f1d:'Weltweite Abdeckung.',
 f2:'Hohe Geschwindigkeit',
-f2d:'Niedrige Latenz.',
+f2d:'Optimierte Routen.',
 f3:'Multi Plattform',
 f3d:'Alle Geräte unterstützt.',
 f4:'24/7 Support',
@@ -623,27 +933,31 @@ f4d:'Professioneller Support.',
 pricingTitle:'Preise',
 pricingDesc:'Flexible Tarife',
 monthly:'Monatlich',
-quarterly:'Vierteljährlich',
+quarterly:'Quartal',
 annual:'Jährlich',
-contactTitle:'Kontakt',
-contactDesc:'Global erreichbar',
+buyNow:'Jetzt kaufen',
+paymentTitle:'Zahlungsmethoden',
+paymentDesc:'Globale Zahlungen',
+notice:'Nur für legale Nutzung.',
+contactTitle:'Kontaktieren Sie uns',
+contactDesc:'Erreichen Sie uns weltweit',
 telegram:'Offizieller Support'
 },
 
 es:{
 tag:'SERVICIO GLOBAL',
-heroTitle:'Conecta el Mundo',
-heroDesc:'Soluciones globales profesionales.',
+heroTitle:'Conecta <span>el mundo</span>',
+heroDesc:'Soluciones globales empresariales.',
 getStarted:'Comenzar',
 contactUs:'Contáctanos',
 featureTitle:'Características',
-featureDesc:'Soluciones empresariales',
-f1:'Nodos Globales',
+featureDesc:'Soluciones confiables',
+f1:'Nodos globales',
 f1d:'Cobertura mundial.',
-f2:'Alta Velocidad',
+f2:'Alta velocidad',
 f2d:'Baja latencia.',
-f3:'Multi Plataforma',
-f3d:'Compatible con todos.',
+f3:'Multiplataforma',
+f3d:'Compatible con todos los dispositivos.',
 f4:'Soporte 24/7',
 f4d:'Soporte profesional.',
 pricingTitle:'Planes',
@@ -651,9 +965,13 @@ pricingDesc:'Planes flexibles',
 monthly:'Mensual',
 quarterly:'Trimestral',
 annual:'Anual',
+buyNow:'Comprar',
+paymentTitle:'Métodos de pago',
+paymentDesc:'Pagos globales',
+notice:'Solo para uso legal.',
 contactTitle:'Contáctanos',
-contactDesc:'Contacto global',
-telegram:'Soporte Oficial'
+contactDesc:'Síguenos en redes sociales',
+telegram:'Soporte oficial'
 }
 
 };
@@ -662,27 +980,25 @@ function changeLanguage(lang){
 
 document.querySelectorAll('[data-key]').forEach(el=>{
 
-const key=el.getAttribute('data-key');
+const key = el.getAttribute('data-key');
 
 if(translations[lang] && translations[lang][key]){
-
-el.innerHTML=translations[lang][key];
-
+el.innerHTML = translations[lang][key];
 }
 
 });
 
-localStorage.setItem('lang',lang);
+localStorage.setItem('site-language',lang);
 
 }
 
-window.onload=function(){
+window.onload = function(){
 
-const lang=localStorage.getItem('lang') || 'en';
+const savedLang = localStorage.getItem('site-language') || 'en';
 
-document.querySelector('.lang-select').value=lang;
+document.querySelector('.lang-select').value = savedLang;
 
-changeLanguage(lang);
+changeLanguage(savedLang);
 
 }
 
